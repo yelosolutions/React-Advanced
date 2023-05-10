@@ -1,11 +1,13 @@
 import React from 'react'
-import Setup from './tutorial/1-useState/setup/1-error-example';
-//import Final from './tutorial/1-useState/final/1-error-example';
+//import Setup from './tutorial/1-useState/setup/2-useState-basics';
+import Count from './tutorial/1-useState/setup/useState-try';
+//import Final from './tutorial/1-useState/final/2-useState-basics';
 
 function App() {
   return (
     <div className='container'>
-      <Setup/>
+      {/* <Setup/> */}
+      <Count/>
       {/* <Final/> */}
     </div>
   )
