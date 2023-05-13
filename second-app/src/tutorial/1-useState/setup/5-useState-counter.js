@@ -1,35 +1,49 @@
 import React, { useState } from 'react';
 
-const UseStateCounter = () => {
-  const [counter, setCounter] = useState(0);
+//demonstates use of useState hook in creating a counter
+const UseStateValue = () => {
+  const [value, setValue] = useState(0);
   
-  const IncreaseCounter = () =>{
-    setCounter(counter + 1);
-  }
-  const DecreaseCounter = () =>{
-    setCounter(counter - 1);
-  }
-  const ResetCounter = () =>{
-    setCounter(0);
-  }
+  const increaseValue = () =>{
+    setValue(value + 1);
+  };
 
-  const [counter2, setCounter2] = useState(0);
-  const LaterCounter = () =>{
-    setCounter2(counter2 + 2);
-  }
+  // const DecreaseValue = () =>{
+  //   setValue(value - 1);
+  // } 
+
+  const reset = () =>{
+    setValue(0);
+  };
+
+  
+  const complexIncrease = () =>{
+    setTimeout(() => {
+      //setValue(value + 1)
+      setValue((prevState) => {
+        return prevState + 1;
+      })
+    }, 2000)
+  };
 
 
   return <>
   <h2>useState counter example</h2>
-  <h3>Regular Counter</h3>
-  <h2>{counter}</h2>
-  <button type="button" className="btn" onClick={() => IncreaseCounter()}>Increase</button>
-  <button type="button" className="btn" onClick={() => ResetCounter()}>Reset</button>
-  <button type="button" className="btn" onClick={() => DecreaseCounter()}>Decrease</button>
-  <h3>More Complex Counter</h3>
-  <h2>{counter2}</h2>
-  <button type="button" className="btn" onClick={() => LaterCounter()}>Increase Later</button>
+  {/* remember camelCase - marginTop instead of margin-top */}
+  <section style={{marginTop: '4rem' }}>
+    <h3>Regular Counter</h3>
+    <h2>{value}</h2>
+    <button type="button" className="btn" onClick={() => setValue(value - 1)}>Decrease</button>
+    <button type="button" className="btn" onClick={() => reset()}>Reset</button>
+    <button type="button" className="btn" onClick={() => increaseValue()}>Increase</button>
+  </section>
+  
+  <section style={{marginTop: '4rem'}}>
+    <h3>More Complex Counter</h3>
+    <h2>{value}</h2>
+    <button type="button" className="btn" onClick={() => complexIncrease()}>Increase Later</button>
+  </section>
   </>
 };
 
-export default UseStateCounter;
+export default UseStateValue;

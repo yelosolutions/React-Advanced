@@ -152,8 +152,31 @@ p {
 .section,
 .container {
   width: 90vw;
+  height: 90vh;
   margin: 0 auto;
   max-width: var(--max-width);
+  display: grid;
+  grid-auto-columns: (40rem auto);
+
+}
+
+.container aside {
+  height: 96%;
+  width: 35rem;
+  display: grid;
+  background-color: #fff;
+}
+
+.container aside a{
+  height: 1rem;
+  width: 33rem;
+  margin: 0.5rem 0;
+  display: block;
+  text-align: center;
+  padding: 5px 5px;
+  background-color: var(--clr-green-dark);
+  border-radius: 1rem;
+
 }
 
 @media screen and (min-width: 992px) {
