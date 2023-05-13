@@ -26,6 +26,9 @@ const UseStateBasics = () => {
 };
 
 
+export default UseStateBasics;
+
+
 //const value = useState(1)[0];
     //const setValue = useState(1)[1];
 
@@ -46,6 +49,3 @@ const UseStateBasics = () => {
         
     };
     */
-
-
-export default UseStateBasics;

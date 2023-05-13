@@ -4,7 +4,7 @@ const ErrorExample = () => {
   let heading = 'Yelo Solutions';
 
   const clickHandler = () => {
-    heading = 'Must be new';
+    heading = 'This is new';
     console.log(heading);
   };
 
