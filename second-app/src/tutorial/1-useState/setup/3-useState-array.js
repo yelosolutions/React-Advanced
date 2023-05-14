@@ -8,10 +8,13 @@ const UseStateArray = () => {
     
     const removeItem = (id) => {
         //filter out the array, remain with ones with id thats NOT equal to the id parameter
-        let newPeople = people.filter((person) => id !== person.id)
+        
         
         //use setPeople to render these newPeople
-        setPeople(newPeople);
+        setPeople((oldPeople) => {
+            let newPeople = oldPeople.filter((person) => id !== person.id)
+            return newPeople;
+        });
     };
 
 

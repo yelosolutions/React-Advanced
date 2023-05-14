@@ -25,7 +25,7 @@ const Product = () => {
     <article>
         
         <img src={data[1].img} alt="" />
-        <h5>{data[1].id}</h5>
+        <h5>{data[1].id}</h5> 
         <h4>{data[1].name}</h4>
         <button type="button" className="btn">Add to Cart</button>    
     </article>)
