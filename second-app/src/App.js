@@ -1,15 +1,11 @@
 import React from 'react'
-import Setup from './tutorial/1-useState/setup/3-useState-array';
-//import Count from './tutorial/1-useState/setup/useState-try';
-// import Final from './tutorial/1-useState/final/5-useState-counter';
-//import Home from './tutorial/1-useState/setup/maMboga';
+//import Final from './tutorial/2-useEffect/final/1-useEffect-basics';
+import Setup from './tutorial/2-useEffect/setup/1-useEffect-basics';
 
 function App() {
   return (
     <div className='container'>
       <Setup/>
-      {/* <Home/> */}
-      {/* <Count/> */}
       {/* <Final/> */}
     </div>
   )
