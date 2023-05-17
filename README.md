@@ -3,8 +3,6 @@
 1. ## useState Hook
 
 - ### A Birthday Reminder
-
-===
 <img src='.\second-app\src\assets\snap.PNG' alt='useState snap'/>
 
 2. ## useEffect Hook
