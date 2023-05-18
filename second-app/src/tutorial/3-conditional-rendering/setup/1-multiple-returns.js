@@ -8,24 +8,26 @@ const MultipleReturns = () => {
 	const [user, setUser] = useState('default User');
 
 	useEffect(()=>{
+		//'then' method of response allows access and manipulation of promises(response)
+		//'catch' handles methods that occur during fetch request
 		fetch(url)
-		.then((resp) => {
-			if (resp.status >= 200 && resp.status <= 299){
-				return resp.json();
-			} else{
-				setIsLoading(false)
-				setIsError(true);
-				throw new Error(resp.statusText);
-			}	
-		})
-		.then((user) => {
-			const {login} = user;
-			setUser(login);
-			setIsLoading(false);
-		} )
-		.catch((error) => {
-			console.log(error);
-		});
+			.then((resp) => {
+				if (resp.status >= 200 && resp.status <= 299){
+					return resp.json();
+				} else{
+					setIsLoading(false);
+					setIsError(true);
+					throw new Error(resp.statusText);
+				}	
+			})
+			.then((user) => {
+				const {login} = user;
+				setUser(login);
+				setIsLoading(false);
+			})
+			.catch((error) => {
+				console.log(error);
+			});
 	}, []);
 
 	if(isLoading){
