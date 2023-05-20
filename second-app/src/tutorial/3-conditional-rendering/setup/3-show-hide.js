@@ -5,14 +5,24 @@ import React, { useState, useEffect } from 'react'
 const ShowHide = () => {
     const [show, setShow] = useState(false);
 
-    if(show){
-        return <>
-        <button className='btn' onClick={() => setShow(!show)}>Show/Hide</button>
-        <Item/>
+    return (
+        <>
+            <button className='btn' onClick={()=>setShow(!show)}> show/hide</button>
+            
+            {/* short circuting - returns last truthy value if all are truthy*/}
+            {show && <Item/>}
         </>
-    } return <>
-        <button className='btn' onClick={() => setShow(!show)}>Show/Hide</button>
-    </>
+        
+    );
+
+    // if(show){
+    //     return <>
+    //     <button className='btn' onClick={() => setShow(!show)}>Show/Hide</button>
+    //     <Item/>
+    //     </>
+    // } return <>
+    //     <button className='btn' onClick={() => setShow(!show)}>Show/Hide</button>
+    // </>
 };
 
 

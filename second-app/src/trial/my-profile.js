@@ -2,6 +2,8 @@ import React, {useState, useEffect} from 'react'
 
 const url = 'https://api.github.com/users/yelosolutions';
 
+
+//User component - fetch and display my github profile  
 const User = () => {
     const [user, setUser] = useState({});
 
@@ -9,7 +11,7 @@ const User = () => {
         const response = await fetch(url);
         const user = await response.json();
         setUser(user);
-    }
+    };
 
     
     useEffect(() => {
