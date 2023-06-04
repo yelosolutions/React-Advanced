@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /*
 =============== 
 Variables
@@ -70,8 +74,8 @@ Global Styles
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   background: var(--clr-grey-10);
   color: var(--clr-grey-1);
   line-height: 1.5;
@@ -167,7 +171,6 @@ p {
   margin-top: 5rem;
 }
 
-
 .btn {
   display: inline-block;
   background: var(--clr-primary-5);
@@ -239,39 +242,15 @@ p {
 }
 
 .form {
-  background: var(--clr-white);
-  max-width: var(--fixed-width);
-  margin: 0 auto;
-  margin-bottom: 4rem;
-  padding: 1rem 2rem;
-  border-radius: var(--radius);
-}
-
-.form input {
-  background: var(--clr-grey-10);
-  border-color: transparent;
-  border-radius: var(--radius);
-  padding: 0.25rem 0.5rem;
+  @apply bg-white max-w-md m-auto mb-16 p-4 md:p-8 rounded-md;
 }
 
 .form-control {
-  margin: 0.5rem 0;
-  display: grid;
-  grid-template-columns: 100px 1fr;
-  align-items: center;
+  @apply flex flex-col m-2 grid-cols-2 items-center gap-3;
 }
 
 .form button {
-  display: inline-block;
-  background: var(--clr-black);
-  color: var(--clr-white);
-  border-color: transparent;
-  margin-top: 1rem;
-  letter-spacing: var(--spacing);
-  padding: 0.15rem 0.25rem;
-  text-transform: capitalize;
-  border-radius: var(--radius);
-  cursor: pointer;
+  @apply inline-block bg-gray-800 mt-4 p-1 capitalize rounded-md cursor-pointer text-white;
 }
 
 .nav-links {
