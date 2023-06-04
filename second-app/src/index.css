@@ -246,11 +246,15 @@ p {
 }
 
 .form-control {
-  @apply flex flex-col m-2 grid-cols-2 items-center gap-3;
+  @apply flex content-between m-2 items-center gap-10;
 }
 
-.form button {
-  @apply inline-block bg-gray-800 mt-4 p-1 capitalize rounded-md cursor-pointer text-white;
+.label-style {
+  @apply font-bold;
+}
+
+.input-style {
+  @apply w-full rounded-md bg-zinc-200 p-1;
 }
 
 .nav-links {
