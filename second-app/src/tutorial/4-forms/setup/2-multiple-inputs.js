@@ -78,7 +78,7 @@ const MultipleInputs = () => {
                 </button>
             </form>
             {people.map((person, index) =>{
-                return <div key={index} className='grid grid-cols-3 gap-2 bg-white p-2 mb-3 con'>
+                return <div key={index} className='grid grid-cols-3 gap-2 bg-white p-2 mb-3 '>
                     <h3 className='font-bold'>{person.firstName} </h3>
                     <h4>{person.age}</h4>
                     <p>{person.email}</p>
