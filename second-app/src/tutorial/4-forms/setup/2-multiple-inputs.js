@@ -38,7 +38,7 @@ const MultipleInputs = () => {
                 onSubmit={handleSubmit}
             >
                 <div className='form-control'>
-                    <label className='font-bold' htmlFor="text">Name</label>
+                    <label className='font-bold' htmlFor="firstName">Name</label>
                     <input 
                         className='input-style'
                         id='firstName'
@@ -61,7 +61,7 @@ const MultipleInputs = () => {
                     />    
                 </div>
                 <div className='form-control'>
-                    <label className='font-bold' htmlFor="number">Age</label>
+                    <label className='font-bold' htmlFor="age">Age</label>
                     <input 
                         className='input-style' 
                         type="number"

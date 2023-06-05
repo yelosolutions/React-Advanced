@@ -246,7 +246,7 @@ p {
 }
 
 .form-control {
-  @apply flex content-between m-2 items-center gap-10;
+  @apply grid grid-cols-2 m-2 items-center gap-5;
 }
 
 .label-style {
@@ -254,7 +254,7 @@ p {
 }
 
 .input-style {
-  @apply w-full rounded-md bg-zinc-200 p-1;
+  @apply w-44 rounded-md bg-zinc-200 p-1;
 }
 
 .nav-links {
