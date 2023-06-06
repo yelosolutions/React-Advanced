@@ -4,7 +4,7 @@ import { data } from '../../../data'
 
 //index.js will always be the main entry if no file is specified in App.js
 /** useReducer 
- * - [state, dispatch] = useReducer(reducer) 
+ * - [state, dispatch] = useReducer(reducer, defaultState) 
  * - it is common practice to use dispatch
  * - on using useReducer, we get two things: state value and dispatch function
  * - first pass 'reducer' function in useReducer and then the 'defaultState' object
@@ -12,16 +12,31 @@ import { data } from '../../../data'
  *  with whole state, always use dispatch which goes through the reducer  
  */
 
+/**dispatch
+ * 
+ */
+
 /** reducer 
  * - takes in old 'state' and 'action' and spits back new state
- * - maniplates state when dispatch is called(dispatch an action)     
+ * - maniplates state when dispatch is called(dispatch an action)
+ * - SHOULD ALWAYS RETURN A STATE     
 */
-const reducer = (state, action) => {};
+const reducer = (state, action) => {
+  const newPeople = [...state.people, action.payload];
+
+  if(action.type === 'ADD_ITEM'){
+    return {...state, people: newPeople, isModalOpen: true, modalContent: 'Item added'};
+  }
+  if(action.type === 'NO_VALUE'){
+    return {...state, isModalOpen: true, modalContent: 'Please enter something'};
+  }
+  throw new Error('action type does not match');
+};
 
 const defaultState = {
-  people: [],
-  isModalOpen: true,
-  modalContent: 'hello world'
+  people: data,
+  isModalOpen: false,
+  modalContent: ''
 };
 
 const Index = () => {
@@ -32,11 +47,16 @@ const Index = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (name) {
+      const newPerson = {id: new Date().getTime().toString, name};
 
+      /**dispatching an action which has type property with ADD_ITEM as value
+       * to add item to the people array, add another property - payload
+      */ 
+      dispatch({type:'ADD_ITEM', payload:newPerson});
+      setName('');
     } else {
+      dispatch({type:'NO_VALUE'});
     }
-    setName('');
-    
   };
 
   return (
