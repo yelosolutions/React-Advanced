@@ -32,12 +32,13 @@ const Index = () => {
         <form onSubmit={handleSubmit} className='form'>
             <div>
             <input
+            className='bg-slate-100 p-1 rounded-md'
                 type='text'
                 value={name}
                 onChange={(e) => setName(e.target.value)}
             />
             </div>
-            <button type='submit'>add </button>
+            <button className='btn' type='submit'>add </button>
         </form>
         {state.people.map((person) => {
             return (
