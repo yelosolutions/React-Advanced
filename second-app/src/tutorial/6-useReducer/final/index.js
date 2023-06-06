@@ -3,6 +3,12 @@ import Modal from './Modal';
 import { data } from '../../../data';
 // reducer function
 import { reducer } from './reducer';
+
+/**useReducer hook
+ * - used when there's a more complex setup as far as the state
+ * - adds more structure to initial setup of the state
+ */
+
 const defaultState = {
     people: [],
     isModalOpen: false,
