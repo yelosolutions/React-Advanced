@@ -1,14 +1,13 @@
 import React from 'react'
 
-import Trial from './tutorial/6-useReducer/trial';
+import Setup from './tutorial/6-useReducer/setup';
 // import Final from './tutorial/6-useReducer/final/index';
 
 
 function App() {
 	return (
 		<div className='container'>
-		<Trial/>
-		{/* <Setup/> */}
+		<Setup/>
 		{/* <Final/> */}
 		</div>
 	)

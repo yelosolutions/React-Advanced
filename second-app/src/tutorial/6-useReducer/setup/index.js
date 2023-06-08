@@ -1,6 +1,7 @@
 import React, { useState, useReducer } from 'react'
 import Modal from './Modal'
 import { data } from '../../../data'
+import { reducer } from './reducer'
 
 //index.js will always be the main entry if no file is specified in App.js
 /** useReducer 
@@ -16,22 +17,7 @@ import { data } from '../../../data'
  * 
  */
 
-/** reducer 
- * - takes in old 'state' and 'action' and spits back new state
- * - maniplates state when dispatch is called(dispatch an action)
- * - SHOULD ALWAYS RETURN A STATE     
-*/
-const reducer = (state, action) => {
-  const newPeople = [...state.people, action.payload];
 
-  if(action.type === 'ADD_ITEM'){
-    return {...state, people: newPeople, isModalOpen: true, modalContent: 'Item added'};
-  }
-  if(action.type === 'NO_VALUE'){
-    return {...state, isModalOpen: true, modalContent: 'Please enter something'};
-  }
-  throw new Error('action type does not match');
-};
 
 const defaultState = {
   people: data,
@@ -83,13 +69,15 @@ const Index = () => {
         return (
         <div 
           key={person.id} 
-          className='grid grid-flow-col gap-7 bg-white w-72 rounded-md p-1 '
+          className='item'
         >  
           <h3>{person.name}</h3>
           <button 
             className='right-0 bg-transparent p-1 text-md text-green-700' 
             type='button'
-            // onClick={}
+            onClick={() => 
+              dispatch({type: 'REMOVE_ITEM', payload: person.id})
+            }
           >
             Remove
           </button>
