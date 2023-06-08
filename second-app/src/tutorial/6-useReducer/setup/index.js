@@ -1,7 +1,8 @@
-import React, { useState, useReducer } from 'react'
-import Modal from './Modal'
-import { data } from '../../../data'
-import { reducer } from './reducer'
+import React, { useState, useReducer } from 'react';
+import Modal from './Modal';
+import { data } from '../../../data';
+
+import { reducer } from './reducer';
 
 //index.js will always be the main entry if no file is specified in App.js
 /** useReducer 
@@ -45,9 +46,13 @@ const Index = () => {
     }
   };
 
+  const closeModal = () => {
+    dispatch({type: 'CLOSE_MODAL' });
+  } 
+
   return (
     <>
-      {state.isModalOpen && <Modal modalContent={state.modalContent}/>}
+      {state.isModalOpen && <Modal closeModal={closeModal} modalContent={state.modalContent}/>}
       <form className='form' action="" onSubmit={handleSubmit}>
         <div className='form-control'>
           <input 
