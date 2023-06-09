@@ -34,7 +34,7 @@ const PropDrilling = () => {
     );
     };
 
-    const SinglePerson = ({ id, name, removePerson }) => {
+    const SinglePerson = ({name, removePerson }) => {
     return (
         <div className='item'>
         <h4>{name}</h4>
