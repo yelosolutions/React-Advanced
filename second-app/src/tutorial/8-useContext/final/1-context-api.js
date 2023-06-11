@@ -27,7 +27,7 @@ const List = () => {
     return (
         <>
         {mainData.people.map((person) => {
-            return <SinglePerson key={person.id} {...person} />;
+            return <SinglePerson key={person.id} name={person.name} />;
         })}
         </>
     );

@@ -5,37 +5,45 @@ import {data} from '../../../data';
  * useContext hook - Allow inheritance of data(removePerson function)
  *  down the heirarchy
 */
+
+//
+const PeopleContext = React.createContext();
+
 const TryContextApi = () => {
     const [people, setPeople] = useState(data);
 
+
     const removePerson = (id) => {
-        const newPeople = people.filter((person) => person.id !== id );
-        return setPeople(newPeople);
+        setPeople((people) => {
+            return people.filter((person) => person.id !== id);
+        });
     };
 
     return (
-        <>
+        <PeopleContext.Provider value={{ removePerson }}>
         <h3>TryContextApi</h3>
         <List people={people}/>
-        </>
+        </PeopleContext.Provider>
     );
 };
 
 
 
-const List = ({people}) => {
-    return <section>
+const List = ({ people }) => {
+    return <>
         {people.map((person) => {
-            return <SinglePerson key={person.id} name={person.name}/>
+            return <SinglePerson key={person.id} {...person}/>
         })}
         
-    </section>
+    </>
 };
 
 const SinglePerson = ({id, name}) => {
+    const { removePerson } = useContext(PeopleContext);
+
     return <div className="item">
         <h3>{name}</h3>
-        <button ></button>
+        <button onClick={() => removePerson(id)}>Remove</button>
     </div>
 
 };
