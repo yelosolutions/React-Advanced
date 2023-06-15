@@ -5,20 +5,20 @@ const url = 'https://course-api.com/react-tabs-project';
 
 const Experience = () => {
     const [loading, setLoading] = useState(true);
-    const [positions, setPositions] = useState([]);
+    const [jobs, setJobs] = useState([]);
     const [value, setValue] = useState(0);
 
     const fetchJobs = async() => {
         const response = await fetch(url);
         const newJobs = await response.json();
-        setPositions(newJobs);
+        setJobs(newJobs);
         setLoading(false);
     };
 
     useEffect(() => {
         fetchJobs();
     }, []);
-    console.log(positions);
+    console.log(jobs);
 
     if (loading) {
         return(
@@ -27,15 +27,22 @@ const Experience = () => {
             </section>
         )
     }
-    const {id, duties, dates, company, title} = positions[value];
+    const {id, duties, dates, company, title} = jobs[value];
     return (
-        <div key={id} className='jobs'>
-            <div className="jobs-buttons">
-                <button>
-                    {company}
-                </button>
+        <>
+        <div className="title">
+            <h2>Experience</h2>
+            <div className="underline"><h2>-</h2></div>
+        </div>
+        <div className='jobs'>
+            <div className="btn-container">
+                {jobs.map(({company, index})=>{
+                    return <button key={index} className='button' onClick={() => setValue(index)}>
+                        {company}
+                    </button>
+                })}
             </div>
-            <div className="jobs-main">
+            <section className="jobs-main">
                 <h3>{title}</h3>
                 <p>{dates}</p>
                 {duties.map((task) => {
@@ -45,9 +52,11 @@ const Experience = () => {
                     )
                 })}
                 
-            </div>
+            </section> 
             
         </div>
+        </>
+        
     );
 };
 

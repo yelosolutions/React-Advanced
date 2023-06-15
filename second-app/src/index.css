@@ -369,6 +369,10 @@ p {
   cursor: pointer;
 }
 
+.title {
+  @apply text-center justify-center m-4;
+}
+
 .jobs {
   @apply flex gap-8 m-4 capitalize text-center justify-center;
 }
@@ -377,8 +381,12 @@ p {
   @apply grid grid-flow-row text-left justify-center max-w-lg;
 }
 
-.jobs-buttons {
-  @apply max-w-xs;
+.btn-container {
+  @apply grid grid-flow-row grid;
+}
+
+.btn-container .button {
+  @apply max-h-4;
 }
 
 .underline {
