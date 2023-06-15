@@ -368,3 +368,19 @@ p {
   text-transform: capitalize;
   cursor: pointer;
 }
+
+.jobs {
+  @apply flex gap-8 m-4 capitalize text-center justify-center;
+}
+
+.jobs-main {
+  @apply grid grid-flow-row text-left justify-center max-w-lg;
+}
+
+.jobs-buttons {
+  @apply max-w-xs;
+}
+
+.underline {
+  @apply text-green-800;
+}

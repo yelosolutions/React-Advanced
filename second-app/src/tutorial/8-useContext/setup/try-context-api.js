@@ -4,6 +4,7 @@ import {data} from '../../../data';
 /**
  * useContext hook - Allow inheritance of data(removePerson function)
  *  down the heirarchy
+ * Preffered if there inheritance is two or more levels deep
 */
 
 //
