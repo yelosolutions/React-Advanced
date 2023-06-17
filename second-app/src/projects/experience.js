@@ -59,7 +59,6 @@ const Experience = () => {
                                 className='job-icon'></FaAngleDoubleRight>
                                 <p key={index}>{task}</p>
                             </div>
-                            
                         )
                     })}
                     
