@@ -1,25 +1,22 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 
 //a custom hook - useFetch
 export const useFetch = (url) => {
-    const [data, setData] = useState(url);
+    const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
 
-    
-
-    useEffect(() => {
-        const getData = async() => {
-            const response = await fetch(url);
-            const peopleList = await response.json()
-            setData(peopleList);
-            setLoading(false);
-        };
-        getData();
+    const getData = useCallback(async () => {
+        const response = await fetch(url);
+        const products = await response.json()
+        setData(products);
+        setLoading(false);
     }, [url]);
 
-    return (
-        {loading, data}
-    );
+    useEffect(() => {
+        getData();
+    }, [url, getData]);
+
+    return { loading, data };
 };
 
 
