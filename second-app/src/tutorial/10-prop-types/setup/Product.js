@@ -29,7 +29,7 @@ const Product = ({fields}) => {
 
 //PropTypes properties
 Product.propTypes = {
-    fields: PropTypes.object,
+    //fields: PropTypes.object,
     image: PropTypes.array.isRequired,
     name: PropTypes.string.isRequired,
     company: PropTypes.string.isRequired
