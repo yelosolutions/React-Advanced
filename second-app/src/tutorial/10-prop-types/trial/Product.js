@@ -19,8 +19,8 @@ const Product = ({fields}) => {
     )
 };
 
-//defining proTypes properties
-//datatypes and classes used to check props.
+//defining propTypes properties
+//classes and datatype used to check props.
 Product.propTypes = {
     company: PropTypes.string,
     name: PropTypes.string,
