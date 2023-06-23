@@ -1,16 +1,15 @@
 import React from 'react';
 
-// import Setup from './tutorial/10-prop-types/setup';
-// import Final from './tutorial/10-prop-types/final';
-import Index from './tutorial/10-prop-types/trial';
+
+// import Final from './tutorial/11-react-router/final';
+import Setup from './tutorial/11-react-router/setup';
 
 
 function App() {
 	return (
 		<div className='container'>
-		{/* <Setup/> */}
+		<Setup/>
 		{/* <Final/> */}
-		<Index/>
 		</div>
 	)
 };
