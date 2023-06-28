@@ -1,10 +1,11 @@
 import React from 'react';
 
-const Person = ({name}) => {
+
+const Person = () => {
     return (
-        <article className='item'>
-            <h4>{name}</h4>
-        </article>
+        <div>
+            <h1>Person</h1>
+        </div>
     );
 };
 

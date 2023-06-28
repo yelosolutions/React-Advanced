@@ -17,9 +17,6 @@ const Navbar = () => {
                 <li>
                     <Link to='people'>People</Link>
                 </li>
-                <li>
-                    <Link to='people/person'>Person</Link>
-                </li>
             </ul>
         </nav>
     );
