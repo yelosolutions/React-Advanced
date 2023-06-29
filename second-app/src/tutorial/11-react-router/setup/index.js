@@ -16,9 +16,9 @@ const ReactRouterSetup = () => {
             <Navbar/>
             <Routes>
                 <Route path='/' element={<Home/>} />
-                <Route path='about' element={<About/>} />
-                <Route path='people' element={<People/>} />
-                <Route path='person/:id' element={<Person/>} />
+                <Route path='/about' element={<About/>} />
+                <Route path='/people' element={<People/>} />
+                <Route path='/person/:id' element={<Person/>} />
                 <Route path='*' element={<Error/>} />
             </Routes>
         </Router>
